@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradutor para Braille</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #inputText {
+    width: 300px;
+    height: 100px;
+  }
+  #brailleOutput {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  .braille-character {
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+<h1>Tradutor para Braille</h1>
+<textarea id="inputText" placeholder="Digite o texto aqui"></textarea>
+<button onclick="translateToBraille()">Traduzir para Braille</button>
+<div id="brailleOutput"></div>
+<button id="downloadButton">Baixar em PDF</button>
+
+<script>
+function translateToBraille() {
+  const inputText = document.getElementById('inputText').value.toLowerCase();
+  const brailleAlphabet = {
+    'a': '⠁', 'b': '⠃', 'c': '⠉', 'd': '⠙', 'e': '⠑',
+    'f': '⠋', 'g': '⠛', 'h': '⠓', 'i': '⠊', 'j': '⠚',
+    'k': '⠅', 'l': '⠇', 'm': '⠍', 'n': '⠝', 'o': '⠕',
+    'p': '⠏', 'q': '⠟', 'r': '⠗', 's': '⠎', 't': '⠞',
+    'u': '⠥', 'v': '⠧', 'w': '⠺', 'x': '⠭', 'y': '⠽',
+    'z': '⠵', ' ': '⠠⠠', ',': '⠂', '.': '⠲', '!': '⠖',
+    '?': '⠦', ';': '⠆', ':': '⠒', '(': '⠴', ')': '⠶',
+    '-': '⠤', '_': '⠤', '/': '⠶', '&': '⠯', '#': '⠼',
+    '@': '⠪', '*': '⠔', '+': '⠖', '=': '⠶', '[': '⠢',
+    ']': '⠣', '{': '⠖', '}': '⠶', '|': '⠳', '<': '⠂',
+    '>': '⠆', '"': '⠦', '\'': '⠄', '`': '⠆', '~': '⠦',
+    'á': '⠷', 'à': '⠢', 'â': '⠡', 'ã': '⠐', 'é': '⠮',
+    'è': '⠔', 'ê': '⠂', 'í': '⠊', 'ì': '⠤', 'ó': '⠵',
+    'ò': '⠎', 'ô': '⠬', 'õ': '⠥', 'ú': '⠾', 'ù': '⠜',
+    'û': '⠢', 'ç': '⠯'
+  };
+
+  let brailleOutput = '';
+  for (let i = 0; i < inputText.length; i++) {
+    const char = inputText.charAt(i);
+    brailleOutput += '<span class="braille-character">' + (brailleAlphabet[char] || char) + '</span>';
+  }
+  document.getElementById('brailleOutput').innerHTML = brailleOutput;
+}
+
+document.getElementById('downloadButton').addEventListener('click', function () {
+  const brailleElements = document.getElementsByClassName('braille-character');
+  const brailleText = Array.from(brailleElements).map(el => el.textContent).join('\n');
+  const pdf = new jsPDF();
+  pdf.text(20, 20, 'Texto em Braille:');
+  pdf.text(20, 30, brailleText);
+  pdf.save('traducao_braille.pdf');
+});
+</script>
+</body>
+</html>

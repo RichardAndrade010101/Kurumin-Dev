@@ -7,18 +7,18 @@
     <style>
 
         body{
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-            background-image: linear-gradient(to right, rgb(220, 20, 120),rgb(238, 238, 30));
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
         }
         div{
-            background-color: rgba(0, 0, 0, 9.0);
+            background-color: rgba(0, 0, 0, 0.6);
             position: absolute;
             top:50%;
             left:50%;
             transform: translate(-50%,-50%);
             padding: 80px;
-            border-radius: 30px;
-            color: white;
+            border-radius: 15px;
+            color: #fff;
 
         }
         input{
@@ -29,17 +29,17 @@
         }
     
         .inputSubmit{
-            background-color: rgb(255, 184, 30);
+            background-color: dodgerblue;
             border: nome;
             padding: 15px;
             width: 100%;
-            border-radius: 30px;
+            border-radius: 10px;
             color: white;
             font-size: 15px;
             cursor: pointer;
         }
         .inputSubmit:hover{
-            background-color: Brown;
+            background-color: deepskyblue;
             cursor:pointer;
         }
 
@@ -48,15 +48,15 @@
 <body>
     <a href="home.php">VOLTAR</a>
     <div>
-        <h1>Login - CETAM/IBC</h1>
-        <form action="teste.php" method="POST">
-        <input type="text" name="email" placeholder="Email">
-        <br>
-        <br>
-        <input type="password" name="senha" placeholder="Senha">
-        <br>
-        <br>
-        <input class="inputSubmit" type="submit" name="submit" value="Entrar">
+        <h1>Login - Kurumin Dev</h1>
+        <form action="testelogin.php" method="POST">
+            <input type="text" name="email" placeholder="Email">
+            <br>
+            <br>
+            <input type="password" name="senha" placeholder="Senha">
+            <br>
+            <br>
+            <input class="inputSubmit" type="submit" name="submit" value="Entrar">
         </form>
         
         
