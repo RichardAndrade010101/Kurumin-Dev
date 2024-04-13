@@ -34,7 +34,7 @@
 </head>
 <body>
     <h1>Crie sua conta ou faça login para acessar nossos cursos.</h1>
-    <h2>Capacitação e Acessibilidade.</h2>
+    <h2>Capacitação e Acessibilidade No Kurumin Dev.</h2>
     <div class="box">
         <a href="login.php">login</a>
         <a href="formulario.php">Cadastre-se</a>
