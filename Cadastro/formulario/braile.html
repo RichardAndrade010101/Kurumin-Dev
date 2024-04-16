@@ -22,15 +22,6 @@
     text-align: center;
   }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-</head>
-<body>
-<h1>Tradutor para Braille</h1>
-<textarea id="inputText" placeholder="Digite o texto aqui"></textarea>
-<button onclick="translateToBraille()">Traduzir para Braille</button>
-<div id="brailleOutput"></div>
-<button id="downloadButton">Baixar em PDF</button>
-
 <script>
 function translateToBraille() {
   const inputText = document.getElementById('inputText').value.toLowerCase();
@@ -55,19 +46,31 @@ function translateToBraille() {
   let brailleOutput = '';
   for (let i = 0; i < inputText.length; i++) {
     const char = inputText.charAt(i);
-    brailleOutput += '<span class="braille-character">' + (brailleAlphabet[char] || char) + '</span>';
+    brailleOutput += (brailleAlphabet[char] || char) + ' ';
   }
-  document.getElementById('brailleOutput').innerHTML = brailleOutput;
+  document.getElementById('brailleOutput').textContent = brailleOutput;
 }
 
-document.getElementById('downloadButton').addEventListener('click', function () {
-  const brailleElements = document.getElementsByClassName('braille-character');
-  const brailleText = Array.from(brailleElements).map(el => el.textContent).join('\n');
-  const pdf = new jsPDF();
-  pdf.text(20, 20, 'Texto em Braille:');
-  pdf.text(20, 30, brailleText);
-  pdf.save('traducao_braille.pdf');
-});
+function downloadText() {
+  const brailleOutput = document.getElementById('brailleOutput').textContent;
+  const blob = new Blob([brailleOutput], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'traducao_braille.txt';
+  a.style.display = 'none'; // Hide the link
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
 </script>
+</head>
+<body>
+<h1>Tradutor para Braille</h1>
+<textarea id="inputText" placeholder="Digite o texto aqui"></textarea>
+<button onclick="translateToBraille()">Traduzir para Braille</button>
+<div id="brailleOutput"></div>
+<button onclick="downloadText()">Baixar em Texto</button>
 </body>
 </html>
