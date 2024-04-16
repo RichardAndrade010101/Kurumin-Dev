@@ -1,31 +1,16 @@
 <?php
     if (isset($_POST['submit'])) 
     {
-        // print_r('Nome: ' . $_POST['nome']);
-        // print_r('<br>');
-        // print_r('Email: ' . $_POST['email']);
-        // print_r('<br>');
-        // print_r('Telefone: ' . $_POST['telefone']);
-        // print_r('Sexo: ' . $_POST['genero']);
-        // print_r('<br>');
-        // print_r('Cidade: ' . $_POST['cidade']);
-        // print_r('<br>');
-        // print_r('Estado: ' . $_POST['estado']);
-        // print_r('<br>');
-        // print_r('Endereço: ' . $_POST['endereco']);
-
         include_once('config.php');
 
         $nome = $_POST['nome'];
         $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $sexo = $_POST['genero'];
-        $data_nasc = $_POST['data_nascimento'];
-        $cidade = $_POST['cidade'];
-        $estado = $_POST['estado'];
-        $endereco = $_POST['endereco'];
+        $senha = $_POST['senha'];
+        $telefone = $_POST['telefone']; 
+        $genero = $_POST['genero']; 
+        
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,sexo,data_nasc,cidade,estado,endereco) VALUES ('$nome','$email','$telefone','$sexo','$data_nasc','$cidade','$estado','$endereco')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,senha,telefone,genero) VALUES ('$nome','$email','$senha','$telefone','$genero')");
     }
 ?>
 <!DOCTYPE html>
@@ -36,91 +21,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Formulário</title>
+    <title>Formulário</title> 
+    
+    <style>
+        a.voltar-button {
+            display: inline-block; 
+            padding: 10px 20px; 
+            background-color: #4CAF50; 
+            color: white; 
+            text-decoration: none; 
+            border: none; 
+            border-radius: 5px;
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+            }
+
+            
+            a.voltar-button:hover {
+            background-color: #3e8e41;
+            }
+    </style>
 </head>
 
 <body>
-    <div class="login-button">
-        <button><a href="home.php">Voltar</a></button>
-    </div>
+<a href="login.php" class="voltar-button">Login</a>
+    
     <div class="container">
         <div class="form-image">
             <img src="assets/img//undraw_shopping_re_3wst.svg" alt="">
         </div>
         <div class="form">
-            <form action="#">
+            <form action="#" method="POST"> <!-- Adicionei method="POST" para enviar os dados -->
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
                     </div>
-                    <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                    <!-- <div class="login-button">
+                        <button><a href="login.php">Entrar</a></button>
+                    </div> -->
+                    <style>
+                        .logo-container {
+                            text-align: center; /* Center the logo horizontally */
+                            margin: 20px auto; /* Add margin for spacing */
+                        }
+
+                        .logo-container img {
+                            width: 90px;
+                            height: auto; /* Maintain aspect ratio */
+                        }
+                    </style>
+
+                    <div class="logo-container">
+                        <img src="https://cdn.pixabay.com/photo/2021/03/27/06/31/code-6127616_1280.png" alt="Logo do Site">
                     </div>
+
+
                 </div>
 
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
                     </div>
 
-                    <div class="input-box">
+                    <!-- <div class="input-box">
                         <label for="lastname">Sobrenome</label>
                         <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
-                    </div>
+                    </div> -->
                     <div class="input-box">
                         <label for="email">E-mail</label>
                         <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <label for="telefone">Celular</label>
+                        <input id="telefone" type="tel" name="telefone" placeholder="(xx) xxxx-xxxx" required>
                     </div>
 
 
-                    <div class="input-box">
+                    <!-- <div class="input-box">
                         <label for="confirmPassword">Confirme sua Senha</label>
                         <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
-                    </div>
+                    </div> -->
 
                 </div>
 
-                <div class="gender-inputs">
-                    <div class="gender-title">
+                <div class="genero-inputs">
+                    <div class="genero-title">
                         <h6>Gênero</h6>
                     </div>
 
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="female" type="radio" name="gender">
+                    <div class="genero-group">
+                        <div class="genero-input">
+                            <input id="female" type="radio" name="genero" value="Feminino"> <!-- Adicionei value para cada opção -->
                             <label for="female">Feminino</label>
                         </div>
 
-                        <div class="gender-input">
-                            <input id="male" type="radio" name="gender">
+                        <div class="genero-input">
+                            <input id="male" type="radio" name="genero" value="Masculino"> <!-- Adicionei value para cada opção -->
                             <label for="male">Masculino</label>
                         </div>
 
-                        <div class="gender-input">
-                            <input id="others" type="radio" name="gender">
+                        <div class="genero-input">
+                            <input id="others" type="radio" name="genero" value="Outros"> <!-- Adicionei value para cada opção -->
                             <label for="others">Outros</label>
                         </div>
 
                         <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
+                            <input id="none" type="radio" name="genero" value="Prefiro não dizer"> <!-- Adicionei value para cada opção -->
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a> </button>
+                    <button type="submit" name="submit">Criar Conta</button> <!-- Adicionei type="submit" e name="submit" -->
                 </div>
             </form>
         </div>

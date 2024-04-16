@@ -6,9 +6,10 @@
     <title>Tela de Login</title>
     <style>
 
+
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+            background: linear-gradient(to right, rgb(120, 180, 200), rgb(50, 180, 150));
         }
         div{
             background-color: rgba(0, 0, 0, 0.6);
@@ -43,10 +44,29 @@
             cursor:pointer;
         }
 
+        
+        a.voltar-button {
+        display: inline-block; 
+        padding: 10px 20px; 
+        background-color: #4CAF50; 
+        color: white; 
+        text-decoration: none; 
+        border: none; 
+        border-radius: 5px;
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+        }
+
+        
+        a.voltar-button:hover {
+        background-color: #3e8e41;
+        }
+        
     </style>
 </head>
 <body>
-    <a href="home.php">VOLTAR</a>
+    <a href="cadastro.php" class="voltar-button">VOLTAR</a>
+
     <div>
         <h1>Login - Kurumin Dev</h1>
         <form action="testelogin.php" method="POST">

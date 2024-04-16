@@ -20,12 +20,12 @@
 
         if(mysqli_num_rows($result) < 1) //verifica se o numero de linhas na minha variavel result é maior que 1
         {
-           header('location: index.html');
+           header('location: cadastro.php');
 
         }
         else
         {
-            header('Location: formulario.php');
+            header('Location: index.html');
         }
         
     }
