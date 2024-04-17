@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,11 +36,7 @@
             margin-right: 10px;
             /* Aumenta o espaçamento entre os botões */
         }
-        /* Adicione uma margem entre os botões de login e banco de talentos */
-        .navbar-nav .btn-login {
-            margin-right: 100px;
-            padding: 100px;
-        }
+       
         .navbar-nav .btn-banco-talentos {
             margin-right: 100px;
             padding: 100px;
@@ -84,61 +81,20 @@
                 </li>
 
                 <li class="nav-item">
-                    <!-- Adicione o modal ao botão "Fale Conosco" -->
-                    <button type="button" class="nav-link btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Fale Conosco
-                    </button>
+                    <!-- Substituído o botão por um link -->
+                    <a class="nav-link btn btn-primary" href="faleconosco.html">Fale Conosco</a>
                 </li>
 
             </ul>
 
             <!-- Botão de ação -->
             <div class="d-flex">
-                <a href="login.php" class="btn btn-primary btn-lg btn-login">Login</a>
-                <br>
-                <a href="cadastro.php" class="btn btn-primary btn-lg btn-cadastro">Cadastro</a>
-                <br>
+                
                 <a href="#" class="btn btn-primary btn-lg btn-banco-talentos">Banco De Talentos</a>
             </div>
         </div>
     </div>
 </nav>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Fale Conosco</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Conteúdo do formulário de contato -->
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Endereço de email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Nunca vamos compartilhar seu email, com ninguém.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <!-- Botão de enviar -->
-                <button type="button" class="btn btn-primary">Salvar mudanças</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
     <!--cabeçalho-->
@@ -187,7 +143,9 @@
                 <div class="card" style="width: 18rem;">
                     <img src="https://cdn.pixabay.com/photo/2021/04/07/17/13/braille-6159673_1280.png"
                         class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div
+
+ class="card-body">
                         <h5 class="card-title">Tradutor Braile</h5>
                         <p class="card-text text-muted">Digite ou cole um texto e traduza para o braile de 6 pontos.
                             Será atualizado para o braile de 8 pontos.
@@ -322,3 +280,4 @@
 </body>
 
 </html>
+

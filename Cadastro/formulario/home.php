@@ -10,6 +10,19 @@
             background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
             text-align: center;
             color: white;
+            background-image: url('https://cdn.pixabay.com/photo/2016/11/28/10/48/child-1864718_960_720.jpg');
+            /* Substitua 'caminho/para/sua/imagem-de-fundo.jpg' pelo caminho correto para sua imagem de fundo */
+            background-size: cover;
+            /* Ajusta a imagem de fundo para cobrir toda a tela */
+            background-position: center;
+            /* Centraliza a imagem de fundo */
+            height: 100vh;
+            /* Define a altura do body para 100% da altura da janela de visualização */
+            margin: 0; /* Remova a margem padrão */
+            padding: 0; /* Remova o preenchimento padrão */
+            display: flex; /* Use flexbox para centralizar conteúdo verticalmente */
+            justify-content: center; /* Centralize horizontalmente */
+            align-items: center; /* Centralize verticalmente */
         }
         .box{
             position: absolute;
@@ -33,12 +46,23 @@
     </style>
 </head>
 <body>
-    <h1>Crie sua conta ou faça login para acessar nossos cursos.</h1>
-    <h2>Capacitação e Acessibilidade No Kurumin Dev.</h2>
-    <div class="box">
-        <a href="login.php">login</a>
-        <a href="formulario.php">Cadastre-se</a>
-    </div>
+    <div class="container">
+        <h1>Crie sua conta ou faça login para acessar nossos cursos.</h1>
     
+        <h2>Capacitação e Acessibilidade No Kurumin Dev.</h2>
+        <br><br>
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br>
+        <div class="box">
+            <a href="login.php">login</a>
+            <a href="cadastro.php">Cadastre-se</a>
+        </div>
+    </div>
 </body>
 </html>
