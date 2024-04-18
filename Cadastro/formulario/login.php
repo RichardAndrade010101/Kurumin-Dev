@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +80,7 @@
             <br>
             <input class="inputSubmit" type="submit" name="submit" value="Entrar">
             <br>
-            <a href="cadastro.php" class="voltar-button">VOLTAR</a>
+            <a href="home.php" class="voltar-button">VOLTAR</a>
         </form>
     </div>
 </body>

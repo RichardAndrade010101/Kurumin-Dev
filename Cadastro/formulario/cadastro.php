@@ -24,7 +24,7 @@
     <title>Formulário</title> 
     
     <style>
-        a.voltar-button {
+        a.login-button {
             display: inline-block; 
             padding: 10px 20px; 
             background-color: #4CAF50; 
@@ -37,14 +37,14 @@
             }
 
             
-            a.voltar-button:hover {
+            a.login-button:hover {
             background-color: #3e8e41;
             }
     </style>
 </head>
 
 <body>
-<a href="login.php" class="voltar-button">Login</a>
+<a href="login.php" class="login-button">Login</a>
     
     <div class="container">
         <div class="form-image">
