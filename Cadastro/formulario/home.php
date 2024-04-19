@@ -11,18 +11,18 @@
             text-align: center;
             color: white;
             background-image: url('https://cdn.pixabay.com/photo/2016/11/28/10/48/child-1864718_960_720.jpg');
-            /* Substitua 'caminho/para/sua/imagem-de-fundo.jpg' pelo caminho correto para sua imagem de fundo */
+            
             background-size: cover;
-            /* Ajusta a imagem de fundo para cobrir toda a tela */
+          
             background-position: center;
-            /* Centraliza a imagem de fundo */
+           
             height: 100vh;
-            /* Define a altura do body para 100% da altura da janela de visualização */
-            margin: 0; /* Remova a margem padrão */
-            padding: 0; /* Remova o preenchimento padrão */
-            display: flex; /* Use flexbox para centralizar conteúdo verticalmente */
-            justify-content: center; /* Centralize horizontalmente */
-            align-items: center; /* Centralize verticalmente */
+            
+            margin: 0; 
+            padding: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
         }
         .box{
             position: absolute;
