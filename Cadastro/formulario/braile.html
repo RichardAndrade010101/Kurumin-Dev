@@ -3,25 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="braile.css"/>
 <title>Tradutor para Braille</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-  }
-  #inputText {
-    width: 300px;
-    height: 100px;
-  }
-  #brailleOutput {
-    margin-top: 20px;
-    font-size: 24px;
-  }
-  .braille-character {
-    display: inline-block;
-    width: 1em;
-    text-align: center;
-  }
-</style>
+
 <script>
 function translateToBraille() {
   const inputText = document.getElementById('inputText').value.toLowerCase();
@@ -67,10 +51,24 @@ function downloadText() {
 </script>
 </head>
 <body>
-<h1>Tradutor para Braille</h1>
-<textarea id="inputText" placeholder="Digite o texto aqui"></textarea>
-<button onclick="translateToBraille()">Traduzir para Braille</button>
-<div id="brailleOutput"></div>
-<button onclick="downloadText()">Baixar em Texto</button>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <a href="index.html">voltar</a>
+  <div class="container">
+    <h1>Tradutor para Braille</h1>
+    <textarea id="inputText" placeholder="Digite o texto aqui"></textarea>
+    <button onclick="translateToBraille()">Traduzir para Braille</button>
+    <div id="brailleOutput"></div>
+    <button onclick="downloadText()">Baixar em Texto</button>
+  </div>
 </body>
+
 </html>
