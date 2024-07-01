@@ -3,5 +3,6 @@
 Site de cursos voltados ao pensamento computacional, com foco em acessibilidade de pessoas com deficiência auditiva e visual.
 
 ##📚 Documentação
-- [Documentação do Projeto] (link) 
+- [Documentação do Projeto] (link)
+- Será melhorado no decorrer do curso
 
